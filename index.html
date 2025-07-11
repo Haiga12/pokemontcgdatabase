@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokémon TCG Database</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tcgdex/sdk@2/dist/tcgdex.browser.js"></script>
+        <script src="script.js" defer></script>
+        <script src="darkmode.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Pokémon TCG Database</h1>
+            <input type="text" id="search-input" placeholder="Search Pokémon...">
+            <select id="set-filter">
+                <option value="">Select Set</option>
+            </select>
+            <button id="view-collection-button" onclick="window.location.href='collection.html'">View Collection</button>
+            <div id="toggle-container" aria-label="Toggle dark/light mode" role="switch">
+                <span class="icon moon">🌙</span>
+                <div id="toggle-switch">
+                    <div id="toggle-knob"></div>
+                </div>
+                <span class="icon sun">☀️</span>
+            </div>        
+        </header>
+
+        <main>
+            <p id="empty-message">Please search for a Pokémon or select a set</p>
+            <div id="card-display"></div>
+        </main>
+
+        <div id="card-modal" class="modal hidden">
+            <div class="modal-content">
+                <span id="close-modal" class="close-button">&times;</span>
+                <h2 id="modal-title"></h2>
+                <img id="modal-image" src="" alt="" />
+                <p id="modal-set"></p>
+                <p id="modal-cardnumber"></p>
+                <button id="modal-save-button">Save to Collection</button>
+            </div>
+        </div>
+    </body>
+</html>
